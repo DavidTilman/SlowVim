@@ -4,6 +4,8 @@ A minimal command-line text file editor written in C. Operates on `.txt` files v
 
 ## Building
 
+Requires a C compiler and a POSIX environment (Linux/macOS) for directory listing.
+
 ```sh
 gcc main.c fileops.c -o slowvim
 ```
@@ -45,3 +47,10 @@ Every file operation is automatically appended to `change-log.txt` in the workin
 ```
 [YYYY-MM-DD HH:MM:SS] OPERATION: filename (line count)
 ```
+
+## Source layout
+
+| File | Contents |
+|------|----------|
+| `main.c` | REPL loop, command parsing and argument prompts |
+| `fileops.c` / `fileops.h` | File and line operations, plus change-log writing |
